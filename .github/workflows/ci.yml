@@ -1,21 +1,24 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
+#name of the workflow
 name: Java CI with Gradle
 
+# the events
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
+# what gets run when an event is triggered
 jobs:
   build-java:
 
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 # this is a predefined action that you can find at https://github.com/actions
 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -23,7 +26,7 @@ jobs:
         java-version: 1.8
 
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x gradlew # run is used to run a cmd or linux command
 
     - name: Build with Gradle
       run: ./gradlew build
