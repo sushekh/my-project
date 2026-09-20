@@ -1,12 +1,12 @@
-name: Java CI with Gradle Build
+name: Java CI with Gradle
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
